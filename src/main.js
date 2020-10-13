@@ -5,7 +5,7 @@ import store from './store/index'
 
 // plugins
 import AtUI from 'at-ui'
-
+import VueFab from 'vue-float-action-button'
 import 'at-ui-style/css/at.css'
 import './assets/css/main.scss'
 
@@ -15,7 +15,7 @@ import 'document-register-element/build/document-register-element'
 // vue-custom-element by karol-f
 import vueCustomElement from 'vue-custom-element'
 Vue.use(vueCustomElement)
-
+Vue.use(VueFab)
 Vue.use(AtUI)
 Vue.config.productionTip = false
 
