@@ -8,11 +8,11 @@
         <at-menu mode="horizontal" :active-name="activeTab" @on-select="switchTab">
           <at-menu-item name="list">
             <i class="icon icon-list"></i>
-            List
+            Bereich
           </at-menu-item>
           <at-menu-item name="edit">
             <i class="icon icon-plus-square"></i>
-            Add new
+            Mitglieder
           </at-menu-item>
         </at-menu>
         <br>
