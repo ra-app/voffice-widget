@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-     <fab :actions="fabActions"
-       @cache="cache"
-       @alertMe="alert"
+  <fab
+    :position="position"
+    :bg-color="bgColor"
+    :actions="fabActions"
+    @cache="cache"
+    @alertMe="alert"
   ></fab>
     <!-- access root props via $root -->
     <h1 style="text-align: center" v-if="$root.title">{{ $root.title }}</h1>
@@ -35,7 +38,7 @@ export default {
   data () {
     return {
       bgColor: '#778899',
-          position: 'top-right',
+          position: 'bottom-right',
           fabActions: [
               {
                   name: 'cache',
