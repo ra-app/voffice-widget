@@ -2,7 +2,7 @@
 node_modules
 
 # the built files will be the ones you wish to embed in your sites to use your Vue.js widget
-# /dist
+/dist
 
 # local env files
 .env.local
