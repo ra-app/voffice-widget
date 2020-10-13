@@ -8,6 +8,7 @@ import AtUI from 'at-ui'
 import VueFab from 'vue-float-action-button'
 import 'at-ui-style/css/at.css'
 import './assets/css/main.scss'
+import './assets/css/animate.min.css'
 
 // widget setup
 // (optional) 'Custom elements polyfill'
