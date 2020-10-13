@@ -15,6 +15,7 @@
     "moment": "^2.22.2",
     "vue": "^2.5.16",
     "vue-custom-element": "^3.2.14",
+    "vue-fab": "^2.3.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "webpack": "^4.44.2"

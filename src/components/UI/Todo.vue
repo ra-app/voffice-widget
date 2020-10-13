@@ -18,8 +18,10 @@
   </at-card>
 </template>
 
+
 <script>
 import { mapMutations } from 'vuex'
+import fab from 'vue-fab'
 
 export default {
   props: ['data'],

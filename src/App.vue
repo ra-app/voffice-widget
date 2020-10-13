@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+     <fab :actions="fabActions"
+       @cache="cache"
+       @alertMe="alert"
+  ></fab>
     <!-- access root props via $root -->
     <h1 style="text-align: center" v-if="$root.title">{{ $root.title }}</h1>
 
@@ -19,10 +23,29 @@
 </template>
 
 <script>
+
+import fab from 'vue-fab'
+
+
 export default {
+  components: {
+    fab
+  },
   props: ['title'],
   data () {
     return {
+      bgColor: '#778899',
+          position: 'top-right',
+          fabActions: [
+              {
+                  name: 'cache',
+                  icon: 'cached'
+              },
+              {
+                  name: 'alertMe',
+                  icon: 'add_alert'
+              }
+          ],
       activeTab: ''
     }
   },
@@ -32,7 +55,13 @@ export default {
   methods: {
     switchTab (tab) {
       this.$router.push({ name: tab })
-    }
+    },
+    cache(){
+          console.log('Cache Cleared');
+      },
+      alert(){
+          alert('Clicked on alert icon');
+      }
   },
   watch: {
     '$route.name' () {
