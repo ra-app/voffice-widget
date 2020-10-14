@@ -4,63 +4,43 @@
   :clickAutoClose="false">
     <fab-item :idx="1">
       <div class="MainMenu">
-        <h1 style="text-align: center" v-if="$root.title">{{ $root.title }}</h1>
-        <at-menu mode="horizontal" :active-name="activeTab" @on-select="switchTab">
-          <at-menu-item name="list">
-            <i class="icon icon-list"></i>
-            Bereich
-          </at-menu-item>
-          <at-menu-item name="edit">
-            <i class="icon icon-plus-square"></i>
-            Mitglieder
-          </at-menu-item>
-        </at-menu>
-        <br>
-        <router-view />
+        <HeaderPanel :title="title"/>
+        <ContainerView :title="title"/>
+        <FooterPanel/>
       </div>
     </fab-item>
   </vue-fab>
 </template>
 <script>
+import ContainerView from '../../views/containerView.vue'
+import HeaderPanel from './headerPanel'
+import FooterPanel from './footerPanel'
 export default {
-  props:['title'],
+  components: { ContainerView, HeaderPanel, FooterPanel },
+  props: ['title'],
   data () {
     return {
       showMenu: false,
-      mainBtnColor: '#01879d',
-      activeTab: ''
+      mainBtnColor: '#01879d'
     }
-  },
-  created () {
-    this.activeTab = this.$route.name
   },
   methods: {
     clickMainBtn: function () {
-      this.showMenu = !this.showMenu;
-    },
-    switchTab (tab) {
-      this.$router.push({ name: tab })
+      this.showMenu = !this.showMenu
     }
-  },
-  watch: {
-  '$route.name' () {
-    this.activeTab = this.$route.name
   }
-}
 }
 </script>
 <style scoped>
 .MainMenu{
     position: fixed;
-    min-width: 33%;
+    min-width: calc(100% / 5);
     bottom: 11%;
     height: 50%;
     right: 3%;
-    border: 1px solid #f2f2f2;
+    /* border: 1px solid #f2f2f2; */
     border-radius: 10px;
-    padding: 10px;
-    box-shadow: azure;
-    box-shadow: 0px 0px 2px #a4a4a4;
+    box-shadow: 0px 0px 1px #a4a4a4;
 }
 .fab-item{
   display: flex;
