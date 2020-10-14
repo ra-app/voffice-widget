@@ -1,17 +1,22 @@
 <template>
-  <div class="userDiv">
+  <div class="userDiv" @click="setCall(data.uuid)">
     <h4 slot="title">
-      <img class="userImg" :src="data.img" /> {{ data.name }}
+      <img class="userImg" :src="data.avatar" /> {{ data.name }}
     </h4>
   </div>
 </template>
-
-
 <script>
+import { mapMutations } from 'vuex'
 export default {
-  props: ['data'],
-  methods: {
 
+  props: ['data', 'remoteStreams'],
+  methods: {
+    ...mapMutations([
+      'setCallTo'
+    ]),
+    setCall (uuid) {
+      // this.setCallTo(uuid)
+    }
   }
 }
 </script>

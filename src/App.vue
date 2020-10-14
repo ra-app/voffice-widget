@@ -13,8 +13,8 @@ export default {
   data () {
     return {}
   },
-  methods: {
-
+  mounted () {
+    this.$router.push({ name: 'contacts' })
   }
 }
 </script>

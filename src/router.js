@@ -25,7 +25,7 @@ export default new Router({
     },
     {
       path: '/*',
-      redirect: { name: 'list' }
+      redirect: { name: 'contacts' }
     }
   ],
   mode: 'abstract',

@@ -2,25 +2,24 @@
   <div class="navbar">
     <div class="colum">
       <at-button @click="gotTo('contacts') " class="noBorder font15" size="large" icon="icon-users"></at-button>
-      <at-button @click="gotTo('/') " class="noBorder font15" size="large" icon="icon-message-circle"></at-button>
-      <at-button @click="gotTo('/') " class="noBorder font15" size="large" icon="icon-phone"></at-button>
+      <at-button @click="gotTo('') " class="noBorder font15" size="large" icon="icon-message-circle"></at-button>
+      <at-button @click="gotTo('') " class="noBorder font15" size="large" icon="icon-phone"></at-button>
     </div>
   </div>
 </template>
 <script>
-  export default {
-    data(){
-      return{
-        activeTab: ''
-      }
-    },
-    methods: {
-      gotTo(page){
-        this.$router.push({ name: page })
-
-      }
+export default {
+  data () {
+    return {
+      activeTab: ''
+    }
+  },
+  methods: {
+    gotTo (page) {
+      this.$router.push({ name: page })
     }
   }
+}
 </script>
 <style lang="scss" scoped>
 @import url('https://cdn.lineicons.com/1.0.1/LineIcons.min.css');

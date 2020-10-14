@@ -6,5 +6,8 @@ export default {
   },
   contacts (state) {
     return orderBy(state.contacts, ['name'], ['asc'])
+  },
+  remoteStreams (state) {
+    return Object.keys(state.remoteStreams).length || 0
   }
 }

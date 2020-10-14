@@ -1,15 +1,21 @@
 <template>
-  <div class="headerPanel">
+  <div class="headerPanel" :class="{'noRadius': remoteStreams > 0}">
     {{$root.title}}
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: ['title'],
   data () {
     return {}
   },
-  methods: {}
+  methods: {},
+  computed: {
+    ...mapGetters([
+      'remoteStreams'
+    ])
+  }
 }
 </script>
 <style scoped>
@@ -23,5 +29,9 @@ export default {
   padding: 5px;
   font-size: 15px;
   box-shadow: 0px 0px 1px #a4a4a4;
+}
+.noRadius{
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
 }
 </style>
