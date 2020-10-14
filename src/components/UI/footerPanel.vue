@@ -1,13 +1,17 @@
 <template>
   <div class="navbar">
-    <div class="colum">
+    <div class="colum" v-if="remoteStreams == 0">
       <at-button @click="gotTo('contacts') " class="noBorder font15" size="large" icon="icon-users"></at-button>
       <at-button @click="gotTo('') " class="noBorder font15" size="large" icon="icon-message-circle"></at-button>
       <at-button @click="gotTo('') " class="noBorder font15" size="large" icon="icon-phone"></at-button>
     </div>
+    <div class="colum" v-else>
+      <at-button @click="hangUp()" class="noBorder font15 rotated" size="large" icon="icon-phone"></at-button>
+    </div>
   </div>
 </template>
 <script>
+import { mapMutations, mapGetters } from 'vuex'
 export default {
   data () {
     return {
@@ -15,9 +19,21 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'resetCalls'
+    ]),
     gotTo (page) {
       this.$router.push({ name: page })
+    },
+    hangUp () {
+      this.resetCalls()
+      this.gotTo('contacts')
     }
+  },
+  computed: {
+    ...mapGetters([
+      'remoteStreams'
+    ])
   }
 }
 </script>
@@ -42,6 +58,9 @@ export default {
 }
 .noBorder{
   border: none !important;
+}
+.rotated{
+  transform: rotate(135deg);
 }
 </style>
 <style>

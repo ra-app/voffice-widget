@@ -28,5 +28,10 @@ export default {
       const index = state.remoteStreams.indexOf(uuid)
       if (index > -1) state.remoteStreams.splice(index, 1)
     }
+  },
+  resetCalls (state) {
+    Object.keys(state.remoteStreams).forEach(el => {
+      Vue.delete(state.remoteStreams, el)
+    })
   }
 }

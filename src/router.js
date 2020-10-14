@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import List from './views/List.vue'
 import Edit from './views/Edit.vue'
 import Contacts from './views/contacts.vue'
+import CallView from './views/callView.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/contacts',
       name: 'contacts',
       component: Contacts
+    },
+    {
+      path: '/callView',
+      name: 'callView',
+      component: CallView
     },
     {
       path: '/*',

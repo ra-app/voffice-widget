@@ -15,7 +15,8 @@ export default {
       'setCallTo'
     ]),
     setCall (uuid) {
-      // this.setCallTo(uuid)
+      this.setCallTo(uuid)
+      this.$router.push({ name: 'callView' })
     }
   }
 }
